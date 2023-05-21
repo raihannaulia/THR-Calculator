@@ -10,5 +10,7 @@ data class ThrEntity(
     var tanggal: Long = System.currentTimeMillis(),
     var gaji: Float,
     var tunjangan: Float,
+    var lamaKerja: Float,
+    var pangkat: Boolean
 
 )

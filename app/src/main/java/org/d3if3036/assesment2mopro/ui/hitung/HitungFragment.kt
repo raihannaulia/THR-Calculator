@@ -33,16 +33,16 @@ class HitungFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.button.setOnClickListener { hitungBmi() }
-        binding.saranButton.setOnClickListener { viewModel.mulaiNavigasi() }
+        binding.button.setOnClickListener { hitungThr() }
+        binding.shareButton.setOnClickListener { viewModel.mulaiNavigasi() }
         binding.shareButton.setOnClickListener { shareData() }
 
         viewModel.getHasilThr().observe(requireActivity(), { showResult(it) })
         viewModel.getNavigasi().observe(viewLifecycleOwner) {
             if (it == null) return@observe
             findNavController().navigate(
-                HitungFragmentDirections.actionHitungFragmentToSaranFragment(
-                    it
+                HitungFragmentDirections.actionHitungFragmentToAboutFragment(
+
                 )
             )
             viewModel.selesaiNavigasi()
@@ -73,33 +73,40 @@ class HitungFragment : Fragment() {
 
     private fun hitungThr() {
 
-        val gaji = binding.beratEditText.text.toString()
+        val gaji = binding.gajiEditText.text.toString()
         if (TextUtils.isEmpty(gaji)) {
             Toast.makeText(context, R.string.gaji_invalid, Toast.LENGTH_LONG).show()
             return
         }
 
-        val tunjangan = binding.tinggiEditText.text.toString()
+        val tunjangan = binding.tunjanganEditText.text.toString()
         if (TextUtils.isEmpty(tunjangan)) {
             Toast.makeText(context, R.string.tunjangan_invalid, Toast.LENGTH_LONG).show()
             return
         }
 
+        val lama_kerja = binding.lamaKerjaEditText.text.toString()
+        if (TextUtils.isEmpty(lama_kerja)) {
+            Toast.makeText(context, R.string.lamakerja_invalid, Toast.LENGTH_LONG).show()
+            return
+        }
+
         val selectedId = binding.radioGroup.checkedRadioButtonId
         if (selectedId == -1) {
-            Toast.makeText(context, R.string.gender_invalid, Toast.LENGTH_LONG).show()
+            Toast.makeText(context, R.string.status_invalid, Toast.LENGTH_LONG).show()
             return
         }
         viewModel.hitungThr(
             gaji.toFloat(),
             tunjangan.toFloat(),
-            selectedId == R.id.priaRadioButton
+            lama_kerja.toFloat(),
+            selectedId == R.id.seniorRadioButton
         )
     }
 
 
-    private fun getKategoriLabel(kategori: KategoriThr): String {
-        val stringRes = when (kategori) {
+    private fun getStatusLabel(status: KategoriThr): String {
+        val stringRes = when (status) {
             KategoriThr.JUNIOR -> R.string.junior
             KategoriThr.SENIOR -> R.string.senior
         }
@@ -110,23 +117,22 @@ class HitungFragment : Fragment() {
 
     private fun showResult(result: HasilThr?) {
         if (result == null) return
-        binding.bmiTextView.text = getString(R.string.bmi_x, result.thr)
-        binding.kategoriTextView.text = getString(R.string.kategori_x, getKategoriLabel(result.kategori))
+        binding.thrTextView.text = getString(R.string.thr_x,(result.thr))
         binding.buttonGroup.visibility = View.VISIBLE
     }
 
     private fun shareData() {
         val selectedId = binding.radioGroup.checkedRadioButtonId
-        val gender = if (selectedId == R.id.priaRadioButton)
+        val status = if (selectedId == R.id.seniorRadioButton)
             getString(R.string.senior)
         else
             getString(R.string.junior)
         val message = getString(R.string.bagikan_template,
-            binding.beratEditText.text,
-            binding.tinggiEditText.text,
-            gender,
-            binding.bmiTextView.text,
-            binding.kategoriTextView.text
+            binding.gajiEditText.text,
+            binding.tunjanganEditText.text,
+            status,
+            binding.thrTextView.text,
+            binding.thrTextView.text
         )
         val shareIntent = Intent(Intent.ACTION_SEND)
         shareIntent.setType("text/plain").putExtra(Intent.EXTRA_TEXT, message)

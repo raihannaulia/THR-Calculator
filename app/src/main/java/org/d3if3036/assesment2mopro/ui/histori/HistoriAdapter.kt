@@ -51,8 +51,8 @@ class HistoriAdapter : ListAdapter<ThrEntity, HistoriAdapter.ViewHolder>(DIFF_CA
 
         fun bind(item: ThrEntity) = with(binding) {
             val hasilThr = item.hitungThr()
-            kategoriTextView.text = hasilThr.kategori.toString().substring(0, 1)
-            val colorRes = when(hasilThr.kategori) {
+            kategoriTextView.text = hasilThr.status.toString().substring(0, 1)
+            val colorRes = when(hasilThr.status) {
                 KategoriThr.SENIOR -> R.color.senior
                 KategoriThr.JUNIOR -> R.color.junior
             }
@@ -60,12 +60,12 @@ class HistoriAdapter : ListAdapter<ThrEntity, HistoriAdapter.ViewHolder>(DIFF_CA
             val circleBg = kategoriTextView.background as GradientDrawable
             circleBg.setColor(getColor(root.context, colorRes))
             tanggalTextView.text = dateFormatter.format(Date(item.tanggal))
-            bmiTextView.text = root.context.getString(R.string.hasil_x,
-                hasilThr.thr, hasilThr.kategori.toString())
-            val gender = root.context.getString(
-                if (item.isMale) R.string.pria else R.string.wanita)
+            thrTextView.text = root.context.getString(R.string.hasil_x,
+                hasilThr.thr, hasilThr.status.toString())
+            val status = root.context.getString(
+                if (item.pangkat) R.string.senior else R.string.junior)
             dataTextView.text = root.context.getString(R.string.data_x,
-                item.berat, item.tinggi, gender)
+                item.gaji, item.tunjangan, status)
         }
     }
 }

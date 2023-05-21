@@ -32,13 +32,13 @@
         tools:text="S" />
 
     <TextView
-        android:id="@+id/bmiTextView"
+        android:id="@+id/thrTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         app:layout_constraintStart_toStartOf="@+id/tanggalTextView"
         app:layout_constraintTop_toBottomOf="@+id/tanggalTextView"
-        tools:text="BMI: 24,22 - IDEAL" />
+        tools:text="THR: Rp245,00 - SENIOR" />
     <TextView
         android:id="@+id/dataTextView"
         android:layout_width="0dp"
@@ -48,6 +48,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="@+id/tanggalTextView"
-        app:layout_constraintTop_toBottomOf="@+id/bmiTextView"
+        app:layout_constraintTop_toBottomOf="@+id/thrTextView"
         tools:text="BB: 70,0 - TB: 170,0 - Pria" />
 </androidx.constraintlayout.widget.ConstraintLayout>

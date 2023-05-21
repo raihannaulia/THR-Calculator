@@ -18,7 +18,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="@string/bmi_intro"
+        android:text="@string/thr_intro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -28,34 +28,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:labelFor="@id/beratEditText"
-        android:text="@string/berat_badan"
-        app:layout_constraintBottom_toBottomOf="@+id/beratEditText"
+        android:labelFor="@id/gajiEditText"
+        android:text="@string/gaji"
+        app:layout_constraintBottom_toBottomOf="@+id/gajiEditText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/beratEditText" />
+        app:layout_constraintTop_toTopOf="@+id/gajiEditText" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:labelFor="@id/tinggiEditText"
-        android:text="@string/tinggi_badan"
-        app:layout_constraintBottom_toBottomOf="@+id/tinggiEditText"
+        android:labelFor="@id/tunjanganEditText"
+        android:text="@string/tunjangan"
+        app:layout_constraintBottom_toBottomOf="@+id/tunjanganEditText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tinggiEditText" />
+        app:layout_constraintTop_toTopOf="@+id/tunjanganEditText" />
+
+
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:labelFor="@id/lamaKerjaEditText"
+        android:text="@string/lamakerja"
+        app:layout_constraintBottom_toBottomOf="@+id/lamaKerjaEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/lamaKerjaEditText" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="@string/jenis_kelamin"
+        android:text="@string/status"
         app:layout_constraintBottom_toBottomOf="@+id/radioGroup"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/radioGroup" />
 
     <EditText
-        android:id="@+id/beratEditText"
+        android:id="@+id/gajiEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -68,7 +79,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/tinggiEditText"
+        android:id="@+id/tunjanganEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -76,8 +87,20 @@
         android:ems="10"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/beratEditText"
-        app:layout_constraintTop_toBottomOf="@+id/beratEditText" />
+        app:layout_constraintStart_toStartOf="@+id/gajiEditText"
+        app:layout_constraintTop_toBottomOf="@+id/gajiEditText" />
+
+        <EditText
+        android:id="@+id/lamaKerjaEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tunjanganEditText"
+        app:layout_constraintTop_toBottomOf="@+id/tunjanganEditText" />
 
 
     <RadioGroup
@@ -88,21 +111,21 @@
         android:layout_marginEnd="16dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/tinggiEditText"
-        app:layout_constraintTop_toBottomOf="@+id/tinggiEditText">
+        app:layout_constraintStart_toStartOf="@+id/lamaKerjaEditText"
+        app:layout_constraintTop_toBottomOf="@+id/lamaKerjaEditText">
 
         <RadioButton
-            android:id="@+id/priaRadioButton"
+            android:id="@+id/seniorRadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/pria" />
+            android:text="@string/senior" />
         <RadioButton
-            android:id="@+id/wanitaRadioButton"
+            android:id="@+id/juniorRadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/wanita" />
+            android:text="@string/junior" />
     </RadioGroup>
 
     <Button
@@ -126,7 +149,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
     <TextView
-        android:id="@+id/bmiTextView"
+        android:id="@+id/thrTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -134,31 +157,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider"
-        tools:text="BMI: 24,09" />
-    <TextView
-        android:id="@+id/kategoriTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bmiTextView"
-        tools:text="Kategori: Ideal" />
-
-    <Button
-        android:id="@+id/saranButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/lihat_saran"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/shareButton"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/kategoriTextView" />
+        tools:text="THR: Rp450,000" />
 
     <Button
         android:id="@+id/shareButton"
@@ -168,15 +167,15 @@
         android:layout_marginEnd="16dp"
         android:text="@string/bagikan"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/saranButton"
-        app:layout_constraintTop_toTopOf="@+id/saranButton" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/thrTextView" />
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/buttonGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="invisible"
-        app:constraint_referenced_ids="saranButton,shareButton"
+        app:constraint_referenced_ids="shareButton"
         tools:visibility="visible" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 

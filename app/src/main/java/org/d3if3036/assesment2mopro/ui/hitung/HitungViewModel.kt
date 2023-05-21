@@ -18,10 +18,13 @@ class HitungViewModel(private val db: ThrDao) : ViewModel() {
     private val hasilThr = MutableLiveData<HasilThr?>()
     private val navigasi = MutableLiveData<KategoriThr?>()
 
-    fun hitungThr(gaji: Float, tunjangan: Float,) {
+    fun hitungThr(gaji: Float, tunjangan: Float,lamaKerja: Float, pangkat: Boolean ) {
         val dataThr = ThrEntity(
             gaji = gaji,
             tunjangan = tunjangan,
+            lamaKerja = lamaKerja,
+            pangkat = pangkat
+
         )
         hasilThr.value = dataThr.hitungThr()
 
@@ -36,7 +39,7 @@ class HitungViewModel(private val db: ThrDao) : ViewModel() {
     fun getHasilThr(): LiveData<HasilThr?> = hasilThr
 
     fun mulaiNavigasi() {
-        navigasi.value = hasilThr.value?.kategori
+        navigasi.value = hasilThr.value?.status
     }
 
     fun selesaiNavigasi() {

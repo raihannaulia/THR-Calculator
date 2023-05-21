@@ -6,12 +6,9 @@
     app:startDestination="@id/hitungFragment">
     <fragment
         android:id="@+id/hitungFragment"
-        android:name="org.d3if3036.mopro1.ui.hitung.HitungFragment"
+        android:name="org.d3if3036.assesment2mopro.ui.hitung.HitungFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_hitung"/>
-    <action
-        android:id="@+id/action_hitungFragment_to_saranFragment"
-        app:destination="@id/saranFragment" />
     <action
         android:id="@+id/action_hitungFragment_to_aboutFragment"
         app:destination="@id/aboutFragment" />
@@ -20,24 +17,18 @@
         android:id="@+id/action_hitungFragment_to_historiFragment"
         app:destination="@id/historiFragment" />
 
-
-    <fragment
-        android:id="@+id/saranFragment"
-        android:name="org.d3if3036.mopro1.ui.SaranFragment"
-        tools:layout="@layout/fragment_saran">
         <argument
             android:name="kategori"
-            app:argType="org.d3if3036.mopro1.model.KategoriBmi" />
-    </fragment>
+            app:argType="org.d3if3036.assesment2mopro.model.KategoriThr" />
     <fragment
         android:id="@+id/aboutFragment"
-        android:name="org.d3if3036.mopro1.ui.AboutFragment"
+        android:name="org.d3if3036.assesment2mopro.ui.AboutFragment"
         android:label="@string/tentang_aplikasi"
         tools:layout="@layout/fragment_about"/>
 
     <fragment
         android:id="@+id/historiFragment"
-        android:name="org.d3if3036.mopro1.ui.histori.HistoriFragment"
+        android:name="org.d3if3036.assesment2mopro.ui.histori.HistoriFragment"
         android:label="@string/histori"
         tools:layout="@layout/fragment_histori" />
 
