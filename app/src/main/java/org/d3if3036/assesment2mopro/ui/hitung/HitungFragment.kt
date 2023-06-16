@@ -68,7 +68,7 @@ class HitungFragment : Fragment() {
                 return true
             }
 
-            R.id.menu_about -> {
+            R.id.menu_daftarUang -> {
                 findNavController().navigate(
                     R.id.action_hitungFragment_to_daftarUangFragment
                 )

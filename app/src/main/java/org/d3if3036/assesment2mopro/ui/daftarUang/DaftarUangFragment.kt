@@ -106,9 +106,8 @@ class DaftarUangFragment : Fragment() {
 
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.uang_menu, menu)
-        val menuItem = menu.findItem(R.id.action_switch_layout)
-        setIcon(menuItem)
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.action_switch_layout) {
