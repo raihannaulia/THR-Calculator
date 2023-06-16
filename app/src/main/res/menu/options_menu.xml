@@ -1,6 +1,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
+    <item
+        android:id="@+id/menu_daftarUang"
+        android:icon="@drawable/ic_baseline_money_24"
+        android:title="@string/daftar_uang"
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/menu_histori"
         android:icon="@drawable/ic_baseline_history_24"

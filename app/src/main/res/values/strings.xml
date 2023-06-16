@@ -28,4 +28,13 @@ menghitung THR (Tunjangan Hari Raya) sehingga seseorang dapat mengetahui THR mer
     <string name="konfirmasi_hapus">Hapus semua histori?</string>
     <string name="hapus">Hapus</string>
     <string name="batal">Batal</string>
+    <string name="notif_title">Udah mau lebaran, jangan lupa THR untuk karyawan</string>
+    <string name="notif_text">Mari hitung THR untuk karyawan</string>
+    <string name="channel_name">Updater</string>
+    <string name="channel_desc">Update data uang otomatis</string>
+    <string name="switch_layout">Ubah tampilan</string>
+    <string name="koneksi_error">Koneksi error</string>
+    <string name="daftar_uang">Daftar Uang</string>
+    <string name="message">%1$s diklik!</string>
+
 </resources>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
     app:startDestination="@id/hitungFragment">
+
     <fragment
         android:id="@+id/hitungFragment"
         android:name="org.d3if3036.assesment2mopro.ui.hitung.HitungFragment"
@@ -17,9 +18,14 @@
         android:id="@+id/action_hitungFragment_to_historiFragment"
         app:destination="@id/historiFragment" />
 
+    <action
+        android:id="@+id/action_hitungFragment_to_daftarUangFragment"
+        app:destination="@id/daftarUangFragment" />
+
         <argument
             android:name="kategori"
             app:argType="org.d3if3036.assesment2mopro.model.KategoriThr" />
+
     <fragment
         android:id="@+id/aboutFragment"
         android:name="org.d3if3036.assesment2mopro.ui.AboutFragment"
@@ -31,5 +37,11 @@
         android:name="org.d3if3036.assesment2mopro.ui.histori.HistoriFragment"
         android:label="@string/histori"
         tools:layout="@layout/fragment_histori" />
+
+    <fragment
+        android:id="@+id/daftarUangFragment"
+        android:name="org.d3if3036.assesment2mopro.ui.daftarUang.DaftarUangFragment"
+        android:label="@string/daftar_uang"
+        tools:layout="@layout/fragment_daftar_uang" />
 
 </navigation>
